@@ -1,0 +1,13 @@
+# AlphaRadar 配置文件
+
+system:
+  update_interval: 300 # 5分钟轮询
+
+ai:
+  provider: "mock" # 选项: mock, openai, gemini
+  api_key: ""
+  base_url: "https://api.openai.com/v1"
+  model: "gpt-3.5-turbo"
+
+database:
+  path: "alpha_radar.db"

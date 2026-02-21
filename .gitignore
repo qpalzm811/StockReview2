@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.hypothesis/
+.coverage
+htmlcov/
+tests/
+
+# Cache (DuckDB)
+*.duckdb
+*.db
+*.db-wal
+*.db-shm
+
+# Data fetch timestamps (local only)
+data_fetch_timestamps.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 数据库
+cache
+
+.kiro
+.hypothesis
+.pytest_cache
+参考GitHub仓库/
+skills/
+.agent/
+alpha_radar.db

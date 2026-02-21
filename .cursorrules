@@ -1,0 +1,20 @@
+# AlphaRadar Global Coding Rules
+
+## 1. Performance & Computation (Critical)
+- **Vectorization First**: ALWAYS use `numpy` or `pandas` vectorized operations for data processing.
+- **No Python Loops**: Strictly FORBID `for`/`while` loops over DataFrames or large Arrays. Use vectorization.
+- **NumPy Preference**: For mathematical signal processing (shapes, slopes, peaks), prefer pure `numpy` array manipulation over Pandas Series operations to avoid index alignment overhead.
+- **Pandas Usage**: Use `pandas` primarily for Time-Series specific logic (`rolling`, `ewm`, `resample`) and Data Alignment.
+
+## 2. I/O & Database
+- **Batch Processing**: Always read/write data in batches. Never execute single-row SQL queries inside a loop.
+- **Lock Management**: DuckDB does not support high-concurrency writes/reads from multiple processes on the same file optimally. Use Main-Thread I/O pattern.
+
+## 3. Code Style
+- **Type Hinting**: Strict `typing` module usage.
+- **Docstrings**: Google Style.
+
+## 4. Quality Assurance & Self-Correction
+- **Mandatory Self-Test**: After completing any functional module, YOU MUST generate and run a test script (`pytest`) to verify functionality and catch bugs.
+- **Performance Verification**: For UI or Data-Heavy features, YOU MUST write a benchmark test (like `test_ui_perf.py`) to verify responsiveness (<1s for UI, <10s for Data).
+- **Auto-Fix**: If tests fail or performance is poor, YOU MUST optimize and fix it immediately before reporting completion.
