@@ -277,9 +277,10 @@ class ScannerService(QObject):
             if profiler:
                 try:
                     profiler.stop()
-                    print(profiler.output_text(unicode=True, color=True))
-                    profiler.write_html("scan_performance.html")
-                    try: self.signals.log.emit("性能分析报告已保存: scan_performance.html")
+                    os.makedirs('logs', exist_ok=True)
+                    report_path = os.path.join('logs', 'scan_performance.html')
+                    profiler.write_html(report_path)
+                    try: self.signals.log.emit(f"性能分析报告已保存至专用目录: {report_path}")
                     except: pass
                 except Exception: pass
 
